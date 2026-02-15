@@ -1,67 +1,37 @@
-/* 
- * 01_stars.c 
- * CIEL: Vytvorit pyramidu z hviezdiciek. 
- * SKILL: Praca s vnorenymi cyklami (nested loops) a formatovanim vystupu. 
- * PRINCIP: Pouzivatel zadava pocet riadkov, a program vypise pyramidu z hviezdiciek.
- * PRIKLAD:
- * Input: 3
- * Output:
- *   *
- *  ***
- * *****
+/*
+ * 01_stars.c
+ *
+ * Zameranie: for cyklus, vnoreny for cyklus, scanf, printf, formatovanie vystupu
+ *
+ * ZADANIE: Vypisac pyramidu z hviezdiciek podla poctu riadkov od uzivatela.
+ *   Input: 3
+ *   Output:
+ *     *
+ *    ***
+ *   *****
  */
+
 #include <stdio.h>
 
 int main() {
-    int choice;
     int rows;
+    printf("Pocet riadkov: ");
+    scanf("%d", &rows);
 
-    do {
-        printf("\n--- MAIN MENU ---\n");
-        printf("How many rows of stars do you want? \n");
-        scanf("%d", &rows);
+    /* ------------------------------------------------
+     * #1 Dva vnorene for cykly (medzery + hviezdy)
+     * ------------------------------------------------ */
 
-        printf("Which Option do you want: (1-3) \n");
-        scanf("%d", &choice);
 
-        switch (choice) {
-            case 1:
-                printf("You have chosen option 1.\n");
-                break;
-            case 2:
-                printf("You have chosen option 2.\n");
-                break;
-            case 3:
-                printf("You have chosen option 3.\n");
-                break;
-            default:
-                printf("Invalid choice. Please choose again.\n");
-        }
-    } while (choice != 3);
+    /* ------------------------------------------------
+     * #2 Jeden for + printf s vypocitanou sirkou
+     * ------------------------------------------------ */
 
-/*
-    int c = (2 * rows - 1); // pocet stlpcov
-    // 3 rows -> 5 columns
-    // 4 rows -> 7 columns
-    // 5 rows -> 9 columns
 
-    int i, j;
+    /* ------------------------------------------------
+     * #3 Vzorec v jednom riadku (rows-i medzier, 2*i-1 hviezd)
+     * ------------------------------------------------ */
 
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < c; j++) {
-            // Vypocet hranice pre hviezdy:
-            // lavy okraj: rows-(i-1) = stredna pozicia - posun vlavo
-            // pravy okraj: rows+(i-1) = stredna pozicia + posun vpravo
-            if (j >= rows-(i-1) && j <= rows+(i-1)) {
-                printf("*");  // v rozsahu -> hviezda
-            } else {
-                printf(" ");  // mimo rozsahu -> medzera
-            }
-        }
-        printf("\n");
-    }
-
-*/
 
     return 0;
 }
