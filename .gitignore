@@ -1,0 +1,19 @@
+# Compiled binaries
+01_stars
+02_palindrome
+03_armstrong
+04_strong
+05_prime
+06_no_plus
+07_half_adder
+08_fibonacci
+09_floyd
+10_bin2dec
+11_power
+12_leap
+13_perfect
+
+# General pattern - executables without extension compiled from .c files
+# (backup rule in case new files are added)
+*.o
+*.out
